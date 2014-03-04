@@ -67,7 +67,7 @@ public class LogStashEventSerializer implements ElasticSearchEventSerializer {
         Map<String, String> headers = Maps.newHashMap(event.getHeaders());
 
         byte[] body = event.getBody();
-        if ((body == null || body.length == 0) && headers != null && headers.containsKey(MESSAGE_HEADER)) {
+        if (headers != null && headers.containsKey(MESSAGE_HEADER)) {
             body = headers.get(MESSAGE_HEADER).getBytes();
         }
 
