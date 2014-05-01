@@ -37,6 +37,7 @@ public class LogStashEventSerializer implements ElasticSearchEventSerializer {
 
     private final static String FIELDS_PREFIX = "@fields";
     
+    private final static String ID_HEADER = "_id";
     private final static String SRC_PATH_HEADER = "src_path";
     private final static String HOST_HEADER = "host";
     private final static String TYPE_HEADER = "type";
@@ -137,6 +138,7 @@ public class LogStashEventSerializer implements ElasticSearchEventSerializer {
         blackListedExtraFields.add(HOST_HEADER);
         blackListedExtraFields.add(SRC_PATH_HEADER);
         blackListedExtraFields.add(TAGS_HEADER);
+        blackListedExtraFields.add(ID_HEADER);
     }
 
     @Override
